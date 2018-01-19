@@ -1,0 +1,118 @@
+<section id="find-a-space-section" class="background-color main-content-area">
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+            Space listed successfully.
+        </div>
+        <div class="alert alert-danger" role="alert">
+            {{errMsg}}
+        </div>
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 text-center content-title-text">List A Space
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-12 valid-feedback" [hidden]=helpMsg>
+                Please hold the space until the booking driver arrives or calls or radios to make arrangements. Your cooperation is greatly
+                appreciated, as other drivers rely on this service to find parking too.
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-11 col-md-11 col-sm-12 derect-location mb-3">
+                <form [formGroup]="listSpaceForm" class="list-a-space-form">
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-lg-4 col-form-label" for="staticEmail">Name:</label>
+                        <div class="col-sm-12 col-xl-8 col-lg-8 col-md-12">
+                            <div class="row">
+                                <div class="col-4 px-2">
+                                    <input formControlName='lat' (change)="createMaker()" class="form-control" type="text" placeholder="Latitude" id="example-text-input">
+                                    <div class="invalid-feedback" *ngIf="(listSpaceForm.controls.lat.errors ? listSpaceForm.controls.lat.errors.required:false) && listSpaceForm.controls.lat.touched">
+                                        {{messages.requiredField}}
+                                    </div>
+                                </div>
+                                <div class="col-4 px-2">
+                                    <input formControlName='lng' (change)="createMaker()" class="form-control" type="text" placeholder="Longitude" id="example-text-input">
+                                    <div class="invalid-feedback" *ngIf="(listSpaceForm.controls.lng.errors ? listSpaceForm.controls.lng.errors.required:false) && listSpaceForm.controls.lng.touched">
+                                        {{messages.requiredField}}
+                                    </div>
+                                </div>
+                                <div class="col-4 px-2">
+                                    <a href="javascript:void(0)" (click)="getUserCurrentLocation()">
+                                        <img src="assets/images/map_pin.png">Detect My Location</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-lg-4 col-form-label" for="staticEmail">Maximum Vehicle Size (Feet):</label>
+                        <div class="ol-sm-12 col-xl-7 col-lg-7 col-md-12">
+                            <div class="row">
+
+                                <div class="col-12 px-2">
+                                    <input formControlName='length' class="form-control" type="text" placeholder="Length" id="example-text-input">
+                                    <div class="invalid-feedback" *ngIf="listSpaceForm.controls.length.hasError('required') && listSpaceForm.controls.length.touched"
+                                        class="text-danger">{{messages.requiredField}}</div>
+                                    <div *ngIf="!listSpaceForm.controls.length.hasError('required') && listSpaceForm.controls.length.touched && !listSpaceForm.controls.length.valid"
+                                        class="text-danger">{{messages.onlyNumber}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-12 col-lg-4 col-form-label" for="staticEmail">Available From:</label>
+                        <div class="col-sm-12 col-xl-7 col-lg-7 col-md-12">
+                            <div class="row">
+                                <div class="col-md-6 px-2 pb-2 pb-xl-0">
+                                    <select formControlName="hours" class="form-control" (change)="updateHours($event.target.value, 'hour')">
+                                        <option [selected]="listSpaceForm.controls.hours.value==''" value=''>HH</option>
+                                        <option *ngFor="let hour of hourFormat" [value]='hour.value'>
+                                            <span *ngIf="hour.value < 10">0</span>{{hour.value}}</option>
+                                    </select>
+                                    <div class="invalid-feedback" *ngIf="listSpaceForm.controls.hours.hasError('required') && listSpaceForm.controls.hours.touched"
+                                        class="text-danger">{{messages.requiredField}}</div>
+                                </div>
+                                <div class="col-md-6 px-2">
+                                    <select formControlName="mins" class="form-control" (change)="updateHours($event.target.value, 'min')">
+                                        <option [selected]="listSpaceForm.controls.mins.value==''" value=''>MM</option>
+                                        <option *ngFor="let min of minFormat" [value]='min.value'>
+                                            <span *ngIf="min.value < 10">0</span>{{min.value}}</option>
+                                    </select>
+                                    <div class="invalid-feedback" *ngIf="listSpaceForm.controls.mins.hasError('required') && listSpaceForm.controls.mins.touched"
+                                        class="text-danger">{{messages.requiredField}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-2 pb-2 help-text">
+                        <div class="col-sm-12 col-lg-4 col-form-label">
+                        </div>
+                        <div class="col-sm-12 col-xl-7 col-lg-7 col-md-12 pl-2">*Please provide time when space will be available.</div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-lg-4 col-form-label" for="staticEmail">Description:</label>
+                        <div class="ol-sm-12 col-xl-7 col-lg-7 col-md-12">
+                            <div class="row">
+                                <div class="col-12 px-2">
+                                    <input formControlName='desc' class="form-control" type="text" placeholder="Small Town, Area covered by woods" id="example-text-input">
+                                    <div class="invalid-feedback" *ngIf="listSpaceForm.controls.desc.hasError('required') && listSpaceForm.controls.desc.touched"
+                                        class="text-danger">{{messages.requiredField}}</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+
+                <div id="section-map" class="find-space-detail mb-3">
+                    <img src="/assets/images/map.jpg">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary button-style btn-find" (click)="addSpaceDetails(listSpaceForm.value)" [disabled]="!listSpaceForm.valid"
+                        data-style="expand-right" [ladda]="isLoading" type="submit">List</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,88 @@
+<section id="individual-signup-section" class="background-color main-content-area">
+    <div class="alert alert-success" role="alert">
+        Payment successfully.
+      </div>
+      <div class="alert alert-danger" role="alert">
+        Some details are incorrect for payment. 
+      </div>
+  <div class="container">
+    <div class="row pt-3 pb-3">
+      <div class="col-lg-12 text-center content-title-text">Payment
+      </div>
+    </div>
+    
+        <div class="row justify-content-md-center">
+
+            <div class="col-lg-6 col-md-8 col-sm-12   signu-form-section">
+                <form [formGroup]="paymentForm" novalidate>
+                    <div class="form-group">
+                        <label class="label-style" for="exampleInputEmail1">Card Holder Name</label>
+                        <input type="text" maxlength="50" class="form-control input-padding" id="exampleInputEmail1" formControlName="cardHolderName" aria-describedby="emailHelp" placeholder="">
+                        <div class="invalid-feedback" *ngIf="(paymentForm.controls.cardHolderName.errors ? paymentForm.controls.cardHolderName.errors.pattern:false) && paymentForm.controls.cardHolderName.touched">
+                            Please provide a valid card holder name.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="(paymentForm.controls.cardHolderName.errors ? paymentForm.controls.cardHolderName.errors.required:false) && paymentForm.controls.cardHolderName.touched">
+                            Card Holder Name is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="label-style" for="exampleInputEmail1">Card Number</label>
+                        <input type="tel" minlength="16" maxlength="16" class="form-control input-padding" id="exampleInputEmail1" formControlName="cardNumber" aria-describedby="emailHelp" placeholder="">
+                        <div class="invalid-feedback" *ngIf="(paymentForm.controls.cardNumber.errors ? paymentForm.controls.cardNumber.errors.pattern:false) && paymentForm.controls.cardNumber.touched">
+                            Please provide a valid card number.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="(paymentForm.controls.cardNumber.errors ? paymentForm.controls.cardNumber.errors.minlength:false) && paymentForm.controls.cardNumber.touched">
+                            Card Number must be 16 digits.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="(paymentForm.controls.cardNumber.errors ? paymentForm.controls.cardNumber.errors.required:false) && paymentForm.controls.cardNumber.touched">
+                            Card Number is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="label-style" for="exampleInputEmail1">Expiry Date</label>
+                        <div class="form-inline city-state-align">
+                            <div class="col-12 col-lg-6 col-sm-12 col-xl-6 mb-3 mb-xl-0 mb-lg-0 px-0 pr-xl-1 pr-lg-1">
+                                <div class="selectWrapper">
+                                    <select class="form-control" id="exampleSelect1" formControlName="expiryMonth">
+                                        <option value="{{i}}" *ngFor="let month of months; let i=index">{{month}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 col-sm-12 col-xl-6 mb-3 mb-xl-0 mb-lg-0 px-0 pr-xl-1 pr-lg-1">
+                                <div class="selectWrapper">
+                                    <select class="form-control" id="exampleSelect1" formControlName="expiryYear">
+                                        <option value="{{year}}" *ngFor="let year of years">{{year}}</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="label-style" for="exampleInputEmail1">CVV</label>
+                        <input type="password" class="form-control input-padding" maxlength="3" id="exampleInputEmail1" formControlName="cvv" aria-describedby="emailHelp" placeholder="">
+                        <div class="invalid-feedback" *ngIf="(paymentForm.controls.cvv.errors ? paymentForm.controls.cvv.errors.pattern:false) && paymentForm.controls.cvv.touched">
+                            Please provide a valid cvv number.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="(paymentForm.controls.cvv.errors ? paymentForm.controls.cvv.errors.required:false) && paymentForm.controls.cvv.touched">
+                            CVV Number is required.
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                            <!-- <button type="submit" class="btn btn-primary button-style text-center" [disabled]="!paymentForm.valid" (click)="submit(paymentForm.value)"  data-style="expand-right" [ladda]="isLoading">Pay ${{userinfo.payment}}</button> -->
+
+                            <button type="submit" class="btn btn-primary button-style text-center" [disabled]="!paymentForm.valid" (click)="submit(paymentForm.value)"  data-style="expand-right" [ladda]="isLoading">Pay $9.99</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</section>

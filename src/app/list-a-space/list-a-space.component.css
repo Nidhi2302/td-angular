@@ -1,0 +1,15 @@
+.find-space-detail img {
+    width: 100%;
+}
+
+.space-detail-wrapper label {
+    font-family: 'NunitoSans-ExtraBold';
+}
+
+#section-map{
+    height: 360px;
+}
+.help-text{
+    font-size: 12px;
+    color: darkgray;
+}

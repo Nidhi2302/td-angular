@@ -1,0 +1,72 @@
+.enterprise-image-section {
+    padding: 60px;
+    background: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 8px 6px -6px #62656B;
+    /*-moz-box-shadow: 0 0 5px #282b31;
+    -webkit-box-shadow: 0 0 5px#282b31;
+    box-shadow: 0 0 5px #282b31;*/
+}
+
+.individual-text a {
+    font-family: 'NunitoSans-SemiBold';
+    font-size: 38px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.padding-right {
+    padding-right: 60px;
+}
+
+.padding-left {
+    padding-left: 60px;
+}
+
+@media (min-width:320px) and (max-width:767px) {
+    .enterprise-image {
+        max-width: 145px;
+    }
+    .padding-right {
+        padding-right: 15px;
+    }
+    .padding-left {
+        padding-left: 15px;
+    }
+    .individual-text.mb-5 {
+        margin-bottom: 1rem !important;
+    }
+}
+
+@media (min-width:768px) and (max-width:959px) {
+    .enterprise-image {
+        max-width: 170px;
+    }
+    .padding-right {
+        padding-right: 15px;
+    }
+    .padding-left {
+        padding-left: 15px;
+    }
+    .individual-text.mb-5 {
+        margin-bottom: 1rem !important;
+    }
+    .individual-md-image {
+        padding: 70px 60px;
+    }
+}
+
+@media (min-width:960px) and (max-width:1200px) {
+    .enterprise-image {
+        /*width: 210px;*/
+    }
+}
+
+@media (min-width:960px) and (max-width:1365px) {
+    .padding-right {
+        padding-right: 15px;
+    }
+    .padding-left {
+        padding-left: 15px;
+    }
+}

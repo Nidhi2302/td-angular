@@ -1,0 +1,156 @@
+<section id="enterprise-signup-section" class="background-color main-content-area">
+    <div class="container">
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 text-center content-title-text">Logs
+            </div>
+        </div>
+        <!--Tab html-->
+        <div class="row pb-3 justify-content-md-center">
+            <div class="col-lg-10 col-md-12 col-sm-12">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active individual" data-toggle="tab" href="#booking" role="tab">Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link enterprise" data-toggle="tab" href="#listing" role="tab">Listing</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-content mt-3">
+            <div class="tab-pane active" id="booking" role="tabpanel">
+                <div class="row mb-3 justify-content-lg-center justify-content-xl-center">
+                    <div class="">
+                        <label class="filter-label pl-3 mb-2 mb-xl-0 mb-lg-0 mb-md-2 pr-xl-0 pr-gl-0 pr-md-0">Filter:</label>
+                    </div>
+                    <div class="input-group  form-group col-lg-2 col-xl-2 col-md-12 col-sm-12 col-12  mb-2 mb-xl-0 mb-lg-0 mb-md-2 pr-xl-0 pr-gl-0 pr-md-0">
+                        <input class="form-control" [(ngModel)]="fromDate" placeholder="From" bsDatepicker [maxDate]="maxDate" #dp="bsDatepicker"
+                            [bsConfig]="bsConfig" />
+                    </div>
+                    <div class="input-group  form-group col-lg-2 col-xl-2 col-md-12 col-sm-12 col-12  mb-2 mb-xl-0 mb-lg-0 mb-md-2 pr-xl-0 pr-gl-0 pr-md-0">
+                        <input class="form-control" [(ngModel)]="toDate" placeholder="To" bsDatepicker [maxDate]="maxDate" #dp="bsDatepicker" [bsConfig]="bsConfig"
+                        />
+                    </div>
+                    <div class="input-group col-lg-2 col-xl-2 col-md-12 col-sm-12 col-12  mb-2 mb-xl-0 mb-lg-0 mb-md-2 pr-xl-0 pr-gl-0 pr-md-0">
+                        <div class="selectWrapper">
+                            <select class="form-control" [(ngModel)]="sorting">
+                                <option value="listedBy">Listed By</option>
+                                <option value="createdAt">Date</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group col-lg-2 col-xl-2 col-md-12 col-sm-12 col-12  mb-2 mb-xl-0 mb-lg-0 mb-md-2 pr-xl-0 pr-gl-0 pr-md-0">
+                        <button (click)="getBookingHistory()" class="btn btn-primary button-style btn-find" type="button">Apply</button>
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-10 col-md-12 col-sm-12 signu-form-section">
+                        <table class="table table-hover table-bordered table-responsive">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>Number</th>
+                                    <th>Booking ID</th>
+                                    <th>Location</th>
+                                    <th>Listed By</th>
+                                    <th>Date</th>
+                                    <th>Booked At(HH:MM)</th>
+                                    <!-- <th>Action</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let record of bookingHistory| paginate: {id: 'server', itemsPerPage: perPageItem, currentPage: currentPageNumber,totalItems: totalRecord}; let i = index">
+                                    <th scope="row">{{((currentPageNumber-1)*perPageItem)+i+1}}</th>
+                                    <td>{{ record.bookingId }}</td>
+                                    <td>{{record.acLocation}}</td>
+                                    <td>{{ record.listedBy }}</td>
+                                    <td>{{ record.createdAt | date : 'dd/MM/yy' }}</td>
+                                    <td>{{ record.createdAt | date : 'hh:mm' }}</td>
+                                    <!-- <td><a [routerLink]="['/report/booking/', record._id, record.bookingId]">Report</a></td> -->
+                                </tr>
+                                <tr *ngIf="bookingHistory.length==0">
+                                    <td colspan="7">
+                                        No record found
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="loadersmall row justify-content-md-center" *ngIf="loading"></div>
+                <pagination-controls class="row justify-content-md-center my-pagination" (pageChange)="getPage($event,'book')" id="server"></pagination-controls>
+            </div>
+            <div class="tab-pane" id="listing" role="tabpanel">
+                <div class="row mb-3 justify-content-lg-center justify-content-xl-center">
+                    <div class="">
+                        <label class="filter-label pl-3 mb-2 mb-xl-0 mb-lg-0 mb-md-2 pr-xl-0 pr-gl-0 pr-md-0">Filter:</label>
+                    </div>
+                    <div class="input-group  form-group col-lg-2 col-xl-2 col-md-12 col-sm-12 col-12  mb-2 mb-xl-0 mb-lg-0 mb-md-2 pr-xl-0 pr-gl-0 pr-md-0">
+                        <input class="form-control" [(ngModel)]="fromDate1" placeholder="From" bsDatepicker [maxDate]="maxDate" #dp="bsDatepicker" [bsConfig]="bsConfig"
+                        />
+                    </div>
+                    <div class="input-group  form-group col-lg-2 col-xl-2 col-md-12 col-sm-12 col-12  mb-2 mb-xl-0 mb-lg-0 mb-md-2 pr-xl-0 pr-gl-0 pr-md-0">
+                        <input class="form-control" [(ngModel)]="toDate1" placeholder="To" bsDatepicker [maxDate]="maxDate" #dp="bsDatepicker" [bsConfig]="bsConfig" />
+                    </div>
+                    <div class="input-group col-lg-2 col-xl-2 col-md-12 col-sm-12 col-12  mb-2 mb-xl-0 mb-lg-0 mb-md-2 pr-xl-0 pr-gl-0 pr-md-0">
+                        <div class="selectWrapper">
+                            <select class="form-control" [(ngModel)]="sorting1" >
+                                <option value="bookedBy">Booked By</option>
+                                <option value="createdAt">Date</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group col-lg-2 col-xl-2 col-md-12 col-sm-12 col-12  mb-2 mb-xl-0 mb-lg-0 mb-md-2 pr-xl-0 pr-gl-0 pr-md-0">
+                            <button (click)="getListingHistory()" class="btn btn-primary button-style btn-find" type="button">Apply</button>
+                        </div>
+
+                </div>
+
+                <div class="row justify-content-md-center">
+
+                    <div class="col-lg-10 col-md-12 col-sm-12 signu-form-section">
+                        <table class="table table-hover table-bordered table-responsive">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>Number</th>
+                                    <th>Listing ID</th>
+                                    <th>Location</th>
+                                    <th>Booked By</th>
+                                    <th>Date</th>
+                                    <th>Listed At(HH:MM)</th>
+                                    <!-- <th>Action</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let record of listingHistory| paginate: {id: 'server1', itemsPerPage: perPageItem, currentPage: currentPageNumber1,totalItems: totalRecord1}; let i = index">
+                                    <th scope="row">{{((currentPageNumber1-1)*perPageItem)+i+1}}</th>
+                                    <td>{{ record.listingId }}</td>
+                                    <td>{{record.acLocation}}</td>
+                                    <td>{{ record.bookedBy }}</td>
+                                    <td>{{ record.createdAt | date : 'dd/MM/yy' }}</td>
+                                    <td>{{ record.createdAt | date : 'hh:mm' }}</td>
+                                    <!-- <td>
+                                        <a href="javascript:void(0)" [routerLink]="['/report/listing/', record._id, record.listingId]">report</a>
+                                    </td> -->
+                                </tr>
+                                <tr *ngIf="listingHistory.length==0">
+                                    <td colspan="7">
+                                        No record found
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="loadersmall row justify-content-md-center" *ngIf="loading"></div>
+                <pagination-controls class="row justify-content-md-center my-pagination" (pageChange)="getPage($event,'list')" id="server1"></pagination-controls>
+            </div>
+
+        </div>
+        <!--Tab html end-->
+    </div>
+</section>

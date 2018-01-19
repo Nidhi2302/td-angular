@@ -1,0 +1,198 @@
+<section id="enterprise-signup-section" class="background-color main-content-area">
+    <!-- <div class="alert alert-success" role="alert">
+                User registretion successfully.
+              </div> -->
+    <div class="alert alert-danger" role="alert">
+        {{errMsg}}
+    </div>
+    <div class="container">
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 text-center content-title-text">Enterprise
+            </div>
+        </div>
+        <form [formGroup]="signupForm" novalidate>
+            <div class="row justify-content-md-center">
+
+
+                <div class="col-lg-5 col-md-6 col-sm-6  signu-form-section">
+
+                    <div class="form-group">
+                        <label class="label-style" for="exampleInputEmail1">Name</label><span class="invalid-feedback">*</span>
+                        <div class="form-inline city-state-align">
+                            <div class="col-12 col-lg-6 col-sm-12 col-xl-6 mb-3 mb-xl-0 mb-lg-0 px-0 pr-xl-1 pr-lg-1">
+                                <input type="text" class="form-control input-padding" formControlName="firstname" maxlength="50" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="First Name">
+                                <div class="invalid-feedback" *ngIf="(signupForm.controls.firstname.errors ? signupForm.controls.firstname.errors.pattern:false) && signupForm.controls.firstname.touched">
+                                    Please provide a valid First Name.
+                                </div>
+                                <div class="invalid-feedback" *ngIf="(signupForm.controls.firstname.errors ? signupForm.controls.firstname.errors.required:false) && signupForm.controls.firstname.touched">
+                                    First Name is required.
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 col-xl-6 col-sm-12 mb-xl-0 mb-lg-0 px-0 pl-xl-1 pl-lg-1">
+                                <input type="text" class="form-control input-padding" formControlName="lastname" maxlength="50" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                    placeholder="Last Name">
+                                <div class="invalid-feedback" *ngIf="(signupForm.controls.lastname.errors ? signupForm.controls.lastname.errors.pattern:false) && signupForm.controls.lastname.touched">
+                                    Please provide a valid Last Name.
+                                </div>
+                                <div class="invalid-feedback" *ngIf="(signupForm.controls.lastname.errors ? signupForm.controls.lastname.errors.required:false) && signupForm.controls.lastname.touched">
+                                    Last Name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="label-style" for="exampleInputEmail1">Organization</label>
+                        <input type="text" class="form-control input-padding" id="exampleInputEmail1" formControlName="organization" maxlength="50"
+                            aria-describedby="emailHelp" placeholder="">
+                        <div class="invalid-feedback" *ngIf="(signupForm.controls.organization.errors ? signupForm.controls.organization.errors.pattern:false) && signupForm.controls.organization.touched">
+                            Please provide a valid organization.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="(signupForm.controls.organization.errors ? signupForm.controls.organization.errors.required:false) && signupForm.controls.organization.touched">
+                            Organization is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="label-style" for="exampleInputEmail1">Street Address</label><span class="invalid-feedback">*</span>
+                        <input type="text" class="form-control input-padding" id="exampleInputEmail1" formControlName="address" maxlength="50" aria-describedby="emailHelp"
+                            placeholder="">
+                        <div class="invalid-feedback" *ngIf="(signupForm.controls.address.errors ? signupForm.controls.address.errors.pattern:false) && signupForm.controls.address.touched">
+                            Please provide a valid street address.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="(signupForm.controls.address.errors ? signupForm.controls.address.errors.required:false) && signupForm.controls.address.touched">
+                            Street Address is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="label-style" for="exampleInputEmail1">Address (City & State)</label><span class="invalid-feedback">*</span>
+                        <div class="form-inline city-state-align">
+                            <div class="col-12 col-lg-6 col-sm-12 col-xl-6 mb-3 mb-xl-0 mb-lg-0 px-0 pr-xl-1 pr-lg-1">
+                                <input type="text" maxlength="50" class="form-control input-padding max-input-width" formControlName="city" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="">
+
+                                <div class="invalid-feedback" *ngIf="(signupForm.controls.city.errors ? signupForm.controls.city.errors.pattern:false) && signupForm.controls.city.touched">
+                                    Please provide a valid city.
+                                </div>
+                                <div class="invalid-feedback" *ngIf="(signupForm.controls.city.errors ? signupForm.controls.city.errors.required:false) && signupForm.controls.city.touched">
+                                    City is required.
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 col-xl-6 col-sm-12 mb-xl-0 mb-lg-0 px-0 pl-xl-1 pl-lg-1">
+                                <input type="text" maxlength="50" class="form-control input-padding max-input-width"  autocomplete="false" formControlName="state" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="" list="stateList">
+                                <datalist id="stateList">
+                                    <option value="{{state}}" *ngFor="let state of stateList">
+                                </datalist>
+                                <div class="invalid-feedback" *ngIf="(signupForm.controls.state.errors ? signupForm.controls.state.errors.pattern:false) && signupForm.controls.state.touched">
+                                    Please provide a valid state.
+                                </div>
+                                <div class="invalid-feedback" *ngIf="(signupForm.controls.state.errors ? signupForm.controls.state.errors.required:false) && signupForm.controls.state.touched">
+                                    State is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="label-style" for="exampleInputEmail1">Email</label><span class="invalid-feedback">*</span>
+                        <input type="email" maxlength="50" class="form-control input-padding" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="">
+                        <div class="invalid-feedback" *ngIf="((signupForm.controls.email.errors ? signupForm.controls.email.errors.invalidEmailAddress:false) && signupForm.controls.email.touched) && !signupForm.controls.email.errors.required">
+                            Please provide a valid email.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="(signupForm.controls.email.errors ? signupForm.controls.email.errors.required:false) && signupForm.controls.email.touched">
+                            Email is required.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="isEmailValid">
+                            {{emailExistsMsg}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="label-style" for="exampleInputEmail1">Mobile Phone Number</label><span class="invalid-feedback">*</span>
+                        <input type="tel" [textMask]="{mask: mask}" minlength="10" maxlength="20" class="form-control input-padding" formControlName="phoneNumber" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="">
+                        <div class="invalid-feedback" *ngIf="(signupForm.controls.phoneNumber.errors ? signupForm.controls.phoneNumber.errors.minlength:false) && signupForm.controls.phoneNumber.touched">
+                            Mobile Phone number should be at least 10 digits.
+                        </div>
+                        <!-- <div class="invalid-feedback" *ngIf="(((signupForm.controls.phoneNumber.errors ? signupForm.controls.phoneNumber.errors.invalidMobileNumber:false) && signupForm.controls.phoneNumber.touched) && !signupForm.controls.phoneNumber.errors.required) && !signupForm.controls.phoneNumber.errors.minlength">
+                            Please provide a valid mobile phone number.
+                        </div> -->
+                        <div class="invalid-feedback" *ngIf="numberRequire && signupForm.controls.phoneNumber.touched">
+                            Mobile Phone number is required.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="isPhoneValid">
+                            {{phoneExistsMsg}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="label-style" for="exampleInputEmail1">Password</label><span class="invalid-feedback">*</span>
+                        <input type="password" minlength="8" maxlength="50" class="form-control input-padding" formControlName="password" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="">
+                        <div class="invalid-feedback" *ngIf="(signupForm.controls.password.errors ? signupForm.controls.password.errors.minlength:false) && signupForm.controls.password.touched">
+                            Password should be 8 to 10 characters.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="((signupForm.controls.password.errors ? signupForm.controls.password.errors.invalidPassword:false) && signupForm.controls.password.touched) && !signupForm.controls.password.errors.required">
+                            Password must have at one uppercase letter, one lowercase letter, one number and one special character.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="(signupForm.controls.password.errors ? signupForm.controls.password.errors.required:false) && signupForm.controls.password.touched">
+                            Password is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="label-style" for="exampleInputEmail1">Confirm Password</label><span class="invalid-feedback">*</span>
+                        <input type="password" minlength="8" maxlength="50" class="form-control input-padding" formControlName="confirmPassword"
+                            id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                        <div class="invalid-feedback" *ngIf="(signupForm.controls.confirmPassword.errors ? signupForm.controls.confirmPassword.errors.pattern:false) && signupForm.controls.confirmPassword.touched">
+                            Please provide a valid confirm password.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="(signupForm.controls.confirmPassword.errors ? signupForm.controls.confirmPassword.errors.required:false) && signupForm.controls.confirmPassword.touched">
+                            Confirm password is required.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="(signupForm.errors && signupForm.errors['notSame']) && signupForm.controls.confirmPassword.touched">
+                            Password not match.
+                        </div>
+                    </div>
+
+                    <re-captcha (resolved)="resolved($event)" siteKey="6LcsITkUAAAAAMYPdwuLt4bmeZucgHORJcyMEAJ_"></re-captcha>
+                </div>
+                <div class="col-lg-5 col-11 col-md-6 col-sm-6  choose-plan-section pl-5  pt-3">
+                    <fieldset class="form-group row">
+                        <legend class="col-form-legend col-sm-12 col-md-12 col-sm-12 col-lg-12 choose-plan pl-0">Choose Your Plan<span class="invalid-feedback">*</span></legend>
+                        <div class="col-sm-10 col-lg-12 col-sm-12 col-md-12 col-lg-6 choose-plan-inner-section border rounded">
+                            <div class="form-check my-3" *ngFor="let plan of plans">
+                                <label class="form-check-label plan-style">
+                                    <input class="form-check-input mr-3" type="radio" name="plan" formControlName="plan" id="gridRadios1" value="{{plan.price}}"
+                                        checked> {{plan.name}}({{plan.count}})
+                                </label>
+                            </div>
+
+
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group row">
+                        <legend class="col-form-legend col-sm-12 col-md-12 col-sm-12 col-lg-12 choose-plan pl-0">Subscription<span class="invalid-feedback">*</span></legend>
+                        <div class="col-sm-10 col-lg-12 col-sm-12 col-md-12 col-lg-6 choose-plan-inner-section border rounded">
+                            <div class="form-check my-3" *ngFor="let subScriptionPlan of subScriptionPlans">
+                                <!-- <label class="form-check-label plan-style">
+                                    <input class="form-check-input mr-3" type="radio" name="subScriptionPlan" formControlName="subScriptionPlan" id="gridRadios1"
+                                        value="{{subScriptionPlan.name}}" checked> {{subScriptionPlan.name}}-${{subScriptionPlan.price}}
+                                </label> -->
+                                <label class="form-check-label plan-style">
+                                    <input class="form-check-input mr-3" type="radio" name="subScriptionPlan" formControlName="subScriptionPlan" id="gridRadios1"
+                                        value="{{subScriptionPlan.name}}" checked> {{subScriptionPlan.name}}
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+
+            <div class="form-group row mt-3">
+                <div class="col-lg-6 col-md-6 col-sm-6 text-right enterprse-btn">
+                    <button type="submit" (click)="submit(signupForm.value)" data-style="expand-right" [ladda]="isLoading" [disabled]="!signupForm.valid ||recaptcha==''"
+                        class="btn btn-primary button-style text-cente">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

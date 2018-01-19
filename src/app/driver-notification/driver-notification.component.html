@@ -1,0 +1,36 @@
+<section id="enterprise-signup-section" class="background-color main-content-area">
+	<div class="container">
+		<div class="row pt-3 pb-3">
+			<div class="col-lg-12 text-center content-title-text">
+				Notifications
+			</div>
+			<div class="alert alert-danger" role="alert">
+				{{errMsg}}
+			</div>
+		</div>
+		<div class="tab-content mt-3">
+			<div class="tab-pane active" id="booking-tab" role="tabpanel">
+				<div class="row justify-content-md-center">
+					<div class="col-lg-10 col-md-12 col-sm-12 signu-form-section">
+						<table class="table table-striped table-bordered table-responsive">
+							<tbody>
+								<tr *ngFor="let notification of notificationData; let i = index">
+									<th scope="row">{{notification.notificationMessage}}</th>
+									<td *ngIf="notification.showDate == true">{{notification.createdAt | date : 'MM/dd'}}</td>
+									<td *ngIf="notification.showDate == false"> Today </td>
+									<td>{{notification.createdAt | date : 'hh:mm'}}</td>
+								</tr>
+								<tr *ngIf="notificationData.length==0">
+									<td colspan="3">
+										No record found
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Tab html end-->
+	</div>
+</section>

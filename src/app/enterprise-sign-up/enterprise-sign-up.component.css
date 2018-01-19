@@ -1,0 +1,31 @@
+.choose-plan {
+    font-size: 20px;
+    color: #282b31;
+}
+
+.plan-style {
+    color: #87888a;
+    font-size: 17px
+}
+
+.choose-plan-inner-section {
+    background-color: #fff;
+}
+
+@media (min-width:320px) and (max-width:767px) {
+    .choose-plan-section.pl-5 {
+        padding-left: 2rem !important;
+    }
+    re-captcha div {
+        transform: scale(0.92);
+        -webkit-transform: scale(0.92);
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+    }
+    #rc-imageselect, .g-recaptcha {
+        transform: scale(0.77);
+        -webkit-transform: scale(0.77);
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+    }
+}

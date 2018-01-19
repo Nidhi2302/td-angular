@@ -1,0 +1,9 @@
+.find-a-space {
+    font-size: 20px;
+    color: #282b31;
+    font-family: 'NunitoSans-SemiBold';
+}
+
+.content-pointer {
+    cursor: pointer;
+}

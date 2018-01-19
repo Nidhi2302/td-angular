@@ -1,0 +1,48 @@
+<section id="find-a-space-section" class="background-color main-content-area">
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+            Space booked successfully.
+        </div>
+        <div class="alert alert-danger" role="alert">
+            {{errMsg}}
+        </div>
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 text-center content-title-text">Space Detail
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 derect-location mb-3">
+                <div class="find-space-detail" id="section-map1">
+                    <img src="assets/images/map.jpg">
+                </div>
+                <div class="space-detail-wrapper">
+                    <div class="row information my-3">
+                        <label class="col-sm-5 col-lg-4">Listed By:</label>
+                        <span class="col-sm-5 col-lg-4">{{spaceDetail.listedBy}}</span>
+                    </div>
+                    <div class="row information my-3">
+                        <label class="col-sm-5 col-lg-4">Phone Number:</label>
+                        <a href="tel:" class="col-sm-5 col-lg-4">{{spaceDetail.phoneNumber}}</a>
+                    </div>
+                    <div class="row information my-3">
+                        <label class="col-sm-5 col-lg-4">Maximum Vehicle Size (Feet):</label>
+                        <span class="col-sm-5 col-lg-4">
+                            <strong>L :</strong>{{spaceDetail.max_vehicle_size}}</span>
+                    </div>
+                    <div class="row information my-3">
+                        <label class="col-sm-5 col-lg-4">Available From:</label>
+                        <span class="col-sm-5 col-lg-4">{{available | date:'dd-MM-yyyy hh:mm'}}</span>
+                    </div>
+                    <div class="row information my-3">
+                        <label class="col-sm-5 col-lg-4">Description:</label>
+                        <span class="col-sm-5 col-lg-4">{{spaceDetail.description}}</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button (click)="bookSpace()" data-style="expand-right" [ladda]="isLoading" class="btn btn-primary button-style btn-find"
+                        type="submit">Book</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

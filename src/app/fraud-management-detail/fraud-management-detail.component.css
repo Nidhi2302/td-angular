@@ -1,0 +1,8 @@
+.space-detail-wrapper label {
+    font-family: 'NunitoSans-ExtraBold';
+}
+@media (min-width:320px) and (max-width:767px) {
+    .space-detail-wrapper  {
+        /* font-size: 20px; */
+    }
+}

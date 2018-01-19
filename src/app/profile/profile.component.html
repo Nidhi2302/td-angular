@@ -1,0 +1,217 @@
+<section id="individual-signup-section" class="background-color main-content-area">
+    <div class="alert alert-success" role="alert">
+        {{successMsg}}
+    </div>
+    <div class="container">
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 text-center content-title-text">Profile
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+
+            <div class="col-lg-6 col-md-8 col-sm-12 signu-form-section justify-content-md-center">
+                <form [formGroup]="userForm" novalidate autocomplete="on" class="form-horizontal form-material" (ngSubmit)="userForms(userForm.value, userForm.valid)">
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label">First Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="inputPassword" formControlName="firstname">
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.firstname.errors ? userForm.controls.firstname.errors.pattern:false) && userForm.controls.firstname.touched">
+                                Please provide a valid First Name.
+                            </div>
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.firstname.errors ? userForm.controls.firstname.errors.required:false) && userForm.controls.firstname.touched">
+                               First Name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label">Last Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="inputPassword" formControlName="lastname">
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.lastname.errors ? userForm.controls.lastname.errors.pattern:false) && userForm.controls.lastname.touched">
+                                Please provide a valid Last Name.
+                            </div>
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.lastname.errors ? userForm.controls.lastname.errors.required:false) && userForm.controls.lastname.touched">
+                              Last Name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-lg-5 col-sm-5 col-form-label">Username</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="inputPassword" formControlName="username">
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.username.errors ? userForm.controls.username.errors.pattern:false) && userForm.controls.username.touched">
+                                Space and special chars are not allowed except[@.-_].
+                             </div>
+                             <div class="invalid-feedback" *ngIf="(userForm.controls.username.errors ? userForm.controls.username.errors.required:false) && userForm.controls.username.touched">
+                                 Username is required.
+                             </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-lg-5 col-sm-5 col-form-label">CB Radio Handle</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="inputPassword" formControlName="cb_radio_handle">
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.cb_radio_handle.errors ? userForm.controls.cb_radio_handle.errors.pattern:false) && userForm.controls.cb_radio_handle.touched">
+                                Please provide a valid CB Radio Handle.
+                            </div>
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.cb_radio_handle.errors ? userForm.controls.cb_radio_handle.errors.required:false) && userForm.controls.cb_radio_handle.touched">
+                                CB Radio Handle is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-lg-5 col-sm-5 col-form-label">Organization</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="inputPassword" formControlName="organization">
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.organization.errors ? userForm.controls.organization.errors.pattern:false) && userForm.controls.organization.touched">
+                                Please provide a valid organization.
+                            </div>
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.organization.errors ? userForm.controls.organization.errors.required:false) && userForm.controls.organization.touched">
+                                Organization is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-lg-5 col-sm-5 col-form-label">Street Address</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="inputPassword" formControlName="address">
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.address.errors ? userForm.controls.address.errors.pattern:false) && userForm.controls.address.touched">
+                                Please provide a valid street address.
+                            </div>
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.address.errors ? userForm.controls.address.errors.required:false) && userForm.controls.address.touched">
+                                Street Address is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label">City</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="inputPassword" formControlName="city">
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.city.errors ? userForm.controls.city.errors.pattern:false) && userForm.controls.city.touched">
+                                Please provide a valid city.
+                            </div>
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.city.errors ? userForm.controls.city.errors.required:false) && userForm.controls.city.touched">
+                                City is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label">State</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="inputPassword" formControlName="state"  autocomplete="false" list="stateList">
+                            <datalist id="stateList">
+                                <option value="{{state}}" *ngFor="let state of stateList">
+                            </datalist>
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.state.errors ? userForm.controls.state.errors.pattern:false) && userForm.controls.state.touched">
+                                Please provide a valid state.
+                            </div>
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.state.errors ? userForm.controls.state.errors.required:false) && userForm.controls.state.touched">
+                                State is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label">Email</label>
+                        <div class="col-sm-6">
+                            <input type="email" class="form-control" id="inputPassword" formControlName="email">
+                            <small [hidden]="userForm.controls.email.valid || (userForm.controls.email.pristine && !submitted)" class="text-danger">
+                                Email is invalid.
+                            </small>
+                            <small *ngIf="emailExists" class="text-danger">
+                                Email Already Exists.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label">Mobile Phone Number</label>
+                        <div class="col-sm-6">
+                            <input type="tel" [textMask]="{mask: mask}" minlength="10" maxlength="20" class="form-control" id="inputPassword" formControlName="phoneNumber" readonly>
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.phoneNumber.errors ? userForm.controls.phoneNumber.errors.minlength:false) && userForm.controls.phoneNumber.touched">
+                                Mobile Phone number should be at least 10 digits.
+                            </div>
+                            <!-- <div class="invalid-feedback" *ngIf="(((userForm.controls.phoneNumber.errors ? userForm.controls.phoneNumber.errors.invalidMobileNumber:false) && userForm.controls.phoneNumber.touched) && !userForm.controls.phoneNumber.errors.required) && !userForm.controls.phoneNumber.errors.minlength">
+                                Please provide a valid mobile phone number.
+                            </div> -->
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.phoneNumber.errors ? userForm.controls.phoneNumber.errors.required:false) && userForm.controls.phoneNumber.touched">
+                                Mobile Phone number is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label">Truck Type</label>
+                        <div class="col-sm-6">
+                            <div class="selectWrapper">
+                                <select class="form-control" id="exampleSelect1" formControlName="truckType">
+                                    <option value="{{truck}}" *ngFor="let truck of truckTypes">{{truck}}</option>
+                                </select>
+    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label">Truck Length (Feet)</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="inputPassword" formControlName="truckLength">
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.truckLength.errors ? userForm.controls.truckLength.errors.pattern:false) && userForm.controls.truckLength.touched">
+                                Please provide a valid Truck Length.
+                            </div>
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.truckLength.errors ? userForm.controls.truckLength.errors.required:false) && userForm.controls.truckLength.touched">
+                                Truck Length is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label">Truck Number</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="inputPassword" formControlName="truckNumber">
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.truckNumber.errors ? userForm.controls.truckNumber.errors.pattern:false) && userForm.controls.truckNumber.touched">
+                                Please provide a valid Truck Number.
+                            </div>
+                            <div class="invalid-feedback" *ngIf="(userForm.controls.truckNumber.errors ? userForm.controls.truckNumber.errors.required:false) && userForm.controls.truckNumber.touched">
+                                Truck Number is required.
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="form-group row mb-2">
+                        <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label">Notification</label>
+                        <div class="col-sm-6">
+                            <label class="switch mb-0">
+                                <input type="checkbox" name="notification" class="notification2" value="1">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label">Notification Type</label>
+                        <div class="col-sm-6">
+                            <div class="selectWrapper">
+                                <select class="form-control" id="exampleSelect1" formControlName="notificationType">
+                                    <option value="{{notification.value}}" *ngFor="let notification of notificationTypes">{{notification.name}}</option>
+                                </select>
+    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label"></label>
+                        <div class="col-sm-6">
+                            <a href="#" [routerLink]="['/change-password/' + userId]">Change Password?</a>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group row" *ngIf="paymentAutoRenewal">
+                            <label for="staticEmail" class="col-sm-5 col-lg-5 col-form-label"></label>
+                            <div class="col-sm-6">
+                                <a href="javascript:void(0)" (click)="cancleSub()">Cancle subscription?</a>
+                            </div>
+                        </div> -->
+                    <div class="form-group row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                            <button type="submit" class="btn btn-primary button-style text-cente">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

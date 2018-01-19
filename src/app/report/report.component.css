@@ -1,0 +1,12 @@
+.booking-id {
+    font-family: 'NunitoSans-ExtraBold';
+    font-size: 23px;
+}
+
+#booking .text-muted {
+    color: #868F95 !important;
+}
+
+.maximum-character-text {
+    resize: none;
+}

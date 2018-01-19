@@ -1,0 +1,220 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<header id="header" *ngIf="normalHeader">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar fixed-top sticky-top navbar-toggleable-md navbar-light bg-faded">
+                    <button class="navbar-toggler navbar-toggler-right mt-4" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" routerLink="">
+                        <img src="assets/images/img-logo.png">
+                    </a>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item" (click)="menuItem(0)">
+                                <a class="nav-link" routerLink="">Home
+                                    <!-- <span class="sr-only">(current)</span> -->
+                                </a>
+                            </li>
+                            <li class="nav-item" (click)="menuItem(1)">
+                                <a class="nav-link" routerLink="/about-us">About</a>
+                            </li>
+                            <li class="nav-item" (click)="menuItem(2)">
+                                <a class="nav-link" routerLink="">Contact</a>
+                            </li>
+                            <li class="nav-item" (click)="menuItem(3)">
+                                <a class="nav-link" routerLink="/login">Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<header id="header" class="login-header" *ngIf="driverHeader">
+    <div class="ml-xl-5 ml-lg-5 mr-xl-5 mr-lg-5">
+        <div class="">
+            <nav class="navbar sticky-top  navbar-toggleable-md navbar-light bg-faded">
+                <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span>
+                <div class="col-lg-10 col-xl-10 text-left">
+                    <a class="navbar-brand" href="/home-driver">
+                        <img src="assets/images/img-logo.png">
+                    </a>
+                </div>
+                <div class="col-lg-1 col-xl-1 text-center notification">
+                    <a routerLink="/driver-notification">
+                        <i class="fa fa-bell " aria-hidden="true"></i>
+                        <span class="badge">{{badgeCount}}</span>
+                    </a>
+                </div>
+                <div class="col-lg-1 col-xl-1 text-left">
+                    <div class="navbar-collapse " id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <span class="uname">{{name}}</span>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" (click)="closeNav()" routerLink="/profile">Profile</a>
+                                        <a class="dropdown-item" (click)="closeNav()" routerLink="/logout/1">Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <div class="slide-top-section">
+            <img src="assets/images/img-logo.png">
+            <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&#9776;</a>
+        </div>
+        <a (click)="closeNav()" routerLink="/list-a-space">List A Space</a>
+        <a (click)="closeNav()" routerLink="/find-a-space">Find A Space</a>
+        <a (click)="closeNav()" routerLink="/driver-history/bookedhistory">History</a>
+    </div>
+</header>
+
+<header id="header" class="login-header" *ngIf="managerHeader">
+    <div class="ml-xl-5 ml-lg-5 mr-xl-5 mr-lg-5">
+        <div class="">
+            <nav class="navbar sticky-top  navbar-toggleable-md navbar-light bg-faded">
+
+                <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span>
+
+                <div class="col-lg-10 col-xl-10 text-left">
+                    <a class="navbar-brand" routerLink="/">
+                        <img src="assets/images/img-logo.png">
+                    </a>
+                </div>
+                <div class="col-lg-1 col-xl-1 text-center notification">
+                    <a routerLink="/driver-notification">
+                        <i class="fa fa-bell " aria-hidden="true"></i>
+                        <span class="badge">{{badgeCount}}</span>
+                    </a>
+                </div>
+                <div class="col-lg-1 col-xl-1 text-left">
+                    <div class="navbar-collapse " id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <span class="uname">{{name}}</span>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" (click)="closeNav()" routerLink="/enterprise-profile">Profile</a>
+                                        <a class="dropdown-item" (click)="closeNav()" routerLink="/logout/1">Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <div class="slide-top-section">
+            <img src="/assets/images/img-logo.png">
+            <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&#9776;</a>
+        </div>
+        <a routerLink="/driver-status" (click)="closeNav()">Driver Status</a>
+        <a routerLink="/single-driver-onboarding" (click)="closeNav()">Driver Onboarding</a>
+        <a routerLink="/manager-drivers" (click)="closeNav()">My Drivers</a>
+        <a routerLink="/manager-history" (click)="closeNav()">History</a>
+    </div>
+</header>
+
+<header id="header" class="login-header" *ngIf="adminHeader">
+    <div class="ml-xl-5 ml-lg-5 mr-xl-5 mr-lg-5">
+        <div class="">
+            <nav class="navbar sticky-top  navbar-toggleable-md navbar-light bg-faded">
+
+                <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span>
+                <div class="col-lg-11 col-xl-11 text-left">
+                    <a class="navbar-brand" href="#">
+                        <img src="/assets/images/img-logo.png">
+                    </a>
+                </div>
+                <div class="col-lg-1 col-xl-1 text-left">
+                    <div class="navbar-collapse " id="navbarNavDropdown">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        {{name}}
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" (click)="closeNav()" routerLink="/logout/1">Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <div class="slide-top-section">
+            <img src="assets/images/img-logo.png">
+            <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&#9776;</a>
+        </div>
+        <a routerLink="/admin-user-management" (click)="closeNav()">User Management</a>
+        <a routerLink="/fraud-management" (click)="closeNav()">Fraud Management</a>
+        <a routerLink="/logs" (click)="closeNav()">Logs</a>
+        <a routerLink="/payment-report" (click)="closeNav()">Payment Reports</a>
+        <a routerLink="/admin-notification" (click)="closeNav()">Notifications</a>
+    </div>
+</header>
+
+<router-outlet></router-outlet>
+<footer class="footer-section py-4">
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-lg-4 col-sm-4 text-left footer-logo">
+                <img src="assets/images/img-logo.png">
+            </div>-->
+            <div class="col-lg-3 col-sm-3 col-12 col-sm-3 text-left mt-3 footer-text">
+                Copyright
+                <i class="fa fa-copyright" aria-hidden="true"></i> {{currentYear}} Need-To-Park
+            </div>
+            <div class="col-lg-5 col-sm-3 col-12 col-sm-5 text-left mt-3 footer-text">
+                <a href="javascript:void(0)" class="pr-xl-5 pr-lg-5 pr-3" routerLink="/terms-of-use">Terms of Use</a>
+                <a href="javascript:void(0)" class="pr-xl-5 pr-lg-5 pr-3" routerLink="/privacy-policy">Privacy Policy</a>
+                <a href="javascript:void(0)" class="" routerLink="/about-us">About Us</a>
+            </div>
+            <div class="col-lg-4 col-sm-5 col-12 col-sm-4 mb-3 footer-center-responsive  text-right mt-2">
+                <div class="row float-right footer-center-responsive">
+                    <!-- <a href="#" class="social-icon border border-right-0 py-2 px-3 text-center rounded-left">
+                        <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                    </a> -->
+                    <a href="#" class="social-icon border border-right-0 py-2 px-3 text-center">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-icon border border-right-0 py-2 px-3 text-center">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.facebook.com/NeedtoPark/" target="_blank" class="social-icon border border-right-0 py-2 px-3 text-center">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-icon border  rounded-right py-2 px-3 text-center">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

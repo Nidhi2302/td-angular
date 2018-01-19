@@ -1,0 +1,134 @@
+<section id="enterprise-signup-section" class="background-color main-content-area">
+    <div class="container">
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 text-center content-title-text">User Management
+            </div>
+        </div>
+        <!--Tab html-->
+        <div class="row pb-3 justify-content-md-center">
+            <div class="col-lg-10 col-md-12 col-sm-12">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active individual" data-toggle="tab" href="#" role="tab" (click)="adminList('individual')">Individual Drivers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link enterprise" data-toggle="tab" href="#" role="tab" (click)="adminList('enterprise')">Enterprise Drivers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link managers" data-toggle="tab" href="#" role="tab" (click)="adminList('managers')">Managers</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="tab-content mt-3">
+            <div class="tab-pane active" id="individual-drivers" role="tabpanel">
+                <div class="row justify-content-md-center">
+
+                    <div class="col-lg-10 col-md-12 col-sm-12 signu-form-section">
+                        <table class="table table-hover table-bordered table-responsive">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>Number</th>
+                                    <th>Driver Name</th>
+                                    <th>DriverID</th>
+                                    <th>Member Since</th>
+                                    <th>Renewal Date</th>
+                                    <th>Status/Payment History</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let user of userList; let i = index">
+                                    <th scope="row">{{i + 1}}</th>
+                                    <td>{{ user.firstname }}</td>
+                                    <td><a [routerLink]="['/payment-details/', user._id]">{{ user.userAutoId }}</a></td>
+                                    <td>{{ user.createdAt | date : 'dd/MM/yy' }}</td>
+                                    <td>{{ user.expiryDate | date : 'dd/MM/yy' }}</td>
+                                    <td *ngIf="!user.isBlock">Active</td>
+                                    <td *ngIf="user.isBlock">Inactive</td>
+                                </tr>
+                                <tr *ngIf="userList.length==0">
+                                    <td colspan="7">
+                                        No record found
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="enterprise-drivers" role="tabpanel">
+                <div class="row justify-content-md-center">
+
+                    <div class="col-lg-10 col-md-12 col-sm-12 signu-form-section">
+                        <table class="table table-hover table-bordered table-responsive">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>Number</th>
+                                    <th>Driver Name</th>
+                                    <th>DriverID</th>
+                                    <th>Member Since</th>
+                                    <th>Renewal Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let user of userList; let i = index">
+                                    <th scope="row">{{i + 1}}</th>
+                                    <td>{{ user.firstname }}</td>
+                                    <td>{{ user.userAutoId }}</td>
+                                    <td>{{ user.createdAt | date : 'dd/MM/yy' }}</td>
+                                    <td>{{ user.expiryDate | date : 'dd/MM/yy' }}</td>
+                                    <td *ngIf="!user.isBlock && user.isEmailVerify">Active</td>
+                                    <td *ngIf="user.isBlock || !user.isEmailVerify">Inactive</td>
+                                </tr>
+                                <tr *ngIf="userList.length==0">
+                                    <td colspan="7">
+                                        No record found
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="managers" role="tabpanel">
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-10 col-md-12 col-sm-12 signu-form-section">
+                        <table class="table table-hover table-bordered table-responsive">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>Number</th>
+                                    <th>Manager Name</th>
+                                    <th>Manager ID</th>
+                                    <th>Member Since</th>
+                                    <th>Renewal Date</th>
+                                    <th>Total Drivers</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let user of userList; let i = index">
+                                    <th scope="row">{{i + 1}}</th>
+                                    <td>{{ user.firstname }}</td>
+                                    <td><a [routerLink]="['/payment-details/', user._id]">{{ user.userAutoId }}</a></td>
+                                    <td>{{ user.createdAt | date : 'dd/MM/yy' }}</td>
+                                    <td>{{ user.expiryDate | date : 'dd/MM/yy' }}</td>
+                                    <td (click)="getDrivers(user._id)" style="cursor: pointer">{{ user.totalCount }}</td>
+                                    <td *ngIf="!user.isBlock">Active</td>
+                                    <td *ngIf="user.isBlock">Inactive</td>
+                                </tr>
+                                <tr *ngIf="userList.length==0">
+                                    <td colspan="7">
+                                        No record found
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Tab html end-->
+    </div>
+</section>

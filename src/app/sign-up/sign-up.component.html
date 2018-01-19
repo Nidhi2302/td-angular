@@ -1,0 +1,27 @@
+<section id="signup" class="signup-bg">
+  <div class="container">
+    <div class="row pt-2 pt-xl-5 pt-lg-5 pt-md-3 pt-sm-3 pb-2 pb-xl-3 pb-lg-3 pb-md-2 pb-sm-2">
+      <div class="col-lg-12 text-center content-title-text color-white mt-2 mt-xl-5 mt-lg-5 mt-md-3 mt-sm-3 mb-xl-3 mb-lg-3 mb-md-2 mb-sm-2">Who Are You?
+      </div>
+    </div>
+    <div class="row justify-content-md-center mt-2">
+      <div class="col-lg-5 col-xl-5 col-12 col-md-6 col-sm-12 padding-right mb-5 text-center individual-text" routerLink="/enterprise-sign-up">
+        <div class="enterprise-image-section rounded-corner">
+          <img class="enterprise-image mb-4" (click)="goTo('/enterprise-sign-up')" src="../assets/images/enterprise.png">
+        </div>
+        <div class="enterprise-text-section mt-4">
+          <a class="mb-3" href="#" routerLink="/enterprise-sign-up">Enterprise</a>
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-xl-5 col-12 col-md-6 col-sm-12 padding-left  mb-5 text-center individual-text" routerLink="/individual-sign-up">
+        <div class="enterprise-image-section individual-md-image rounded-corner">
+          <img class="enterprise-image mb-4" (click)="goTo('/individual-sign-up')" src="../assets/images/individual.png">
+        </div>
+        <div class="enterprise-text-section mt-4">
+          <a class="mb-3" href="#" routerLink="/individual-sign-up">Individual</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

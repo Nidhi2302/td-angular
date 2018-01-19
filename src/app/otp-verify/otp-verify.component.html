@@ -1,0 +1,80 @@
+<section id="otp-verify-section" class="background-color main-content-area">
+    <div class="alert alert-success" role="alert">
+        One Time Password sent to your registered Phone number.
+    </div>
+    <div class="alert alert-danger" role="alert">
+        Some error occured. Please try again.
+    </div>
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-lg-12 text-center content-title-text">Verify One-Time Password
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center content-subtitle-text mb-3 mt-4">
+                Please enter the one-time password we sent to your mobile number.
+            </div>
+        </div>
+        <div class="row" *ngIf="otpInvalid">
+            <div class="col-lg-12 text-center content-subtitle-text invalid-feedback mb-3">
+                {{otpInvalidMsg}}
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+
+            <div class="col-lg-6 col-md-8 col-sm-12 signup-form-section">
+
+                <form class="form-inline justify-content-md-center">
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                        <input type="password" min-length="1" max-length="1" [(ngModel)]="digit1" class="col-2 col-sm-2 mb-2 mr-sm-2 mb-sm-0 col-lg-1 otp-textbox text-center"
+                            (keyup)="autoTab($event,'digit2')" id="digit1" [ngModelOptions]="{standalone: true}">
+                        <input type="password" min-length="1" max-length="1" [(ngModel)]="digit2" class="col-2 col-sm-2 mb-2 mr-sm-2 mb-sm-0 col-lg-1 otp-textbox text-center"
+                            (keyup)="autoTab($event,'digit3')" id="digit2" [ngModelOptions]="{standalone: true}">
+                        <input type="password" min-length="1" max-length="1" [(ngModel)]="digit3" class="col-2 col-sm-2 mb-2 mr-sm-2 mb-sm-0 col-lg-1 otp-textbox text-center"
+                            (keyup)="autoTab($event,'digit4')" id="digit3" [ngModelOptions]="{standalone: true}">
+                        <input type="password" min-length="1" max-length="1" [(ngModel)]="digit4" class="col-2 col-sm-2 mb-2 mr-sm-2 mb-sm-0 col-lg-1 otp-textbox text-center"
+                            id="digit4" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <!--<div class="form-group row mt-3 col-lg-12 col-md-12 col-sm-12 text-center">
+
+                        <div class="text-center resend-link" (click)="changeNum('otp')">Resend</div>
+
+                    </div>-->
+
+                    <div class="form-group row mt-3 col-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                            <div class="text-center resend-link" (click)="changeNum('otp')">Resend</div>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-3 col-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                            <button type="submit" class="btn btn-primary button-style text-center" (click)="verifyOTP()">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+                <!-- <div class="row">
+                    <div class="col-lg-12 text-center content-subtitle-text mb-3">
+                        If you are not getting otp , you can change your number below after 1 min.
+                    </div>
+                    <form [formGroup]="phoneNumForm">
+                        <input type="tel" minlength="10" maxlength="20" formControlName="phoneNumber" class="form-control input-padding col-lg-8" id="validationServer03">
+                        <button type="button" [disabled]="minCount || !phoneNumForm.valid" class="btn btn-primary button-style text-center"
+                            (click)="changeNum('num')">send otp</button>
+                            <div class="invalid-feedback" *ngIf="(phoneNumForm.controls.phoneNumber.errors ? phoneNumForm.controls.phoneNumber.errors.minlength:false) && phoneNumForm.controls.phoneNumber.touched">
+                                    Phone number should be at least 10 digits.
+                                </div>
+                                <div class="invalid-feedback" *ngIf="((phoneNumForm.controls.phoneNumber.errors ? phoneNumForm.controls.phoneNumber.errors.invalidMobileNumber:false) && phoneNumForm.controls.phoneNumber.touched) && !phoneNumForm.controls.phoneNumber.errors.required">
+                                    Please provide a valid phone number.
+                                </div>
+                        <div class="invalid-feedback" *ngIf="isPhoneValid">
+                            {{phoneExistsMsg}}
+                        </div>
+                    </form>
+                </div> -->
+
+            </div>
+
+        </div>
+    </div>
+</section>

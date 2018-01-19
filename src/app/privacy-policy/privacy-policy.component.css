@@ -1,0 +1,133 @@
+p.p1 {
+    margin: 0.0px 0.0px 0.0px 0.0px;
+    text-align: center;
+    /* line-height: 19.2px; */
+    /* font: 12.0px Arial; */
+    color: #606060;
+    -webkit-text-stroke: #606060
+}
+
+p.p2 {
+    margin: 0.0px 0.0px 0.0px 0.0px;
+    /* line-height: 19.2px; */
+    /* font: 12.0px Arial; */
+    color: #606060;
+    -webkit-text-stroke: #606060
+}
+
+p.p3 {
+    margin: 0.0px 0.0px 5.0px 0.0px;
+    /* line-height: 19.2px; */
+    /* font: 12.0px Arial; */
+    color: #606060;
+    -webkit-text-stroke: #606060
+}
+
+p.p4 {
+    margin: 0.0px 0.0px 0.0px 0.0px;
+    /* line-height: 19.2px; */
+    /* font: 13.5px Arial; */
+    color: #8e9baa;
+    -webkit-text-stroke: #8e9baa
+}
+
+p.p5 {
+    margin: 0.0px 0.0px 0.0px 0.0px;
+    /* line-height: 19.2px; */
+    /* font: 18.0px Arial; */
+    color: #8e9baa;
+    -webkit-text-stroke: #8e9baa;
+    min-height: 21.0px
+}
+
+p.p6 {
+    margin: 0.0px 0.0px 0.0px 0.0px;
+    /* line-height: 19.2px; */
+    /* font: 18.0px Arial; */
+    color: #8e9baa;
+    -webkit-text-stroke: #8e9baa
+}
+
+p.p7 {
+    margin: 0.0px 0.0px 5.0px 0.0px;
+    /* line-height: 19.2px; */
+    /* font: 18.0px Arial; */
+    color: #8e9baa;
+    -webkit-text-stroke: #8e9baa
+}
+
+p.p8 {
+    margin: 0.0px 0.0px 0.0px 0.0px;
+    /* font: 11.0px 'Trebuchet MS'; */
+    color: #000000;
+    -webkit-text-stroke: #000000
+}
+
+p.p9 {
+    margin: 0.0px 0.0px 0.0px 0.0px;
+    /* line-height: 19.2px; */
+    /* font: 12.0px Arial; */
+    color: #606060;
+    -webkit-text-stroke: #606060;
+    min-height: 14.0px
+}
+
+li.li2 {
+    margin: 0.0px 0.0px 0.0px 0.0px;
+    /* line-height: 19.2px; */
+    /* font: 12.0px Arial; */
+    color: #606060;
+    -webkit-text-stroke: #606060
+}
+
+span.s1 {
+    font-kerning: none;
+}
+b{
+    font-family: 'NunitoSans-Bold'
+}
+.p4 span.s1 {
+    font-size: 17px;
+}
+.p6 .s1 {
+    font-size: 25px;
+}
+
+span.s2 {
+    text-decoration: underline;
+    font-kerning: none;
+    color: #0a8dd1;
+    -webkit-text-stroke: 0px #0a8dd1
+}
+
+span.s3 {
+    /* font: 10.0px Symbol; */
+    -webkit-text-stroke: 0px #8e9baa
+}
+
+span.s4 {
+    /* font: 10.0px Symbol */
+}
+
+span.s5 {
+    font-kerning: none;
+    background-color: #ffff00
+}
+
+span.s6 {
+    text-decoration: underline;
+    font-kerning: none;
+    color: #0563c1;
+    -webkit-text-stroke: 0px #0563c1
+}
+
+span.s7 {
+    /* font: 12.0px Arial; */
+    font-kerning: none;
+    color: #606060;
+    -webkit-text-stroke: 0px #606060
+}
+
+ul.ul1 {
+    list-style-type: disc
+}

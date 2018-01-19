@@ -1,0 +1,581 @@
+.img-fluid {
+  background-size: 100% auto;
+}
+
+#header .bg-faded {
+  background-color: #fff;
+}
+
+#banner-section .carousel-caption {
+  bottom: 33%;
+}
+
+#what-we-do-section {
+  background-color: #F8F9FB;
+  border-bottom: 1px solid #E8E8EA;
+}
+
+#map-section {
+  background: url("/assets/images/map.jpg")no-repeat center center transparent;
+  width: 100%;
+  height: 500px;
+  background-size: 100% auto;
+  position: relative;
+}
+
+.get-in-touch {
+  background-color: #fff;
+  height: 370px;
+  /*position: absolute;*/
+}
+
+.get-in-touch hr {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  border: 0;
+  margin-left: 20rem;
+  margin-right: 20rem;
+  border-top: 1px solid rgba(0, 0, 0, 1);
+  padding: 0px;
+}
+
+#contact-form-section {
+  background: url("/assets/images/bg.png")no-repeat center center transparent;
+  width: 100%;
+  padding: 60px;
+  padding-top: 130px;
+  background-size: 100% auto;
+}
+
+.write-to-us-container, #individual-enter-section {
+  background-color: #fff;
+}
+
+.section-heading-individual {
+  font-size: 35px;
+  font-family: 'NunitoSans-ExtraBold';
+  color: #282b31;
+}
+
+.section-heading-desc {
+  font-size: 16px;
+  font-family: 'NunitoSans-Light';
+  color: #827c7c;
+  padding: 8px 49px;
+  line-height: 30px;
+  letter-spacing: 0.5px;
+}
+
+.individual-main-section {
+  background-color: #F8F9FB;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*what we do*/
+
+.what-we-do-content-wrapper {
+  background-color: #fff;
+  box-shadow: 0 4px 6px -6px #ccc;
+  border: 1px solid #f1f1f1;
+  height: 346px;
+}
+
+.what-we-do-content-wrapper h4 {
+  font-family: 'NunitoSans-SemiBold';
+  font-size: 20px;
+  color: #282b31;
+}
+
+.what-we-do-content-wrapper p {
+  font-size: 14px;
+  color: #676c75;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  height: 42px;
+  -webkit-box-orient: vertical;
+}
+
+.what-we-do-content-wrapper a {
+  font-size: 14px;
+  color: #0083bb;
+  text-decoration: underline;
+}
+
+.what-we-do-section {
+  color: #0083bb;
+  font-family: 'NunitoSans-Light';
+  margin-bottom: 39px;
+  letter-spacing: 3px;
+}
+
+.what-we-do {
+  font-family: 'NunitoSans-ExtraBold';
+}
+
+/*safety tips*/
+
+#safety-tips {
+  background: url("/assets/images/bg2.png")no-repeat center center transparent;
+  width: 100%;
+  background-size: 100% auto;
+}
+
+.safety-tips-wrapper {
+  background-color: #fff;
+  box-shadow: 0 4px 6px -6px #ccc;
+}
+
+.safety-tips-wrapper h4 {
+  font-family: 'NunitoSans-SemiBold';
+  font-size: 20px;
+  color: #282b31;
+}
+
+.safety-tips-wrapper p {
+  font-size: 16px;
+  color: #676c75;
+  font-family: 'NunitoSans-Bold';
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  height: 52px;
+  -webkit-box-orient: vertical;
+}
+
+.safety-tips-wrapper img {
+  width: 100%;
+}
+
+.safety-tips-wrapper a {
+  font-size: 14px;
+  color: #000;
+  text-decoration: underline;
+}
+
+.safety-tips-section {
+  color: #fff;
+  font-family: 'NunitoSans-Light';
+  margin-bottom: 2.4rem;
+}
+
+.safety-tips {
+  font-family: 'NunitoSans-Bold';
+}
+
+.email-section {
+  color: #fff;
+  font-family: 'NunitoSans-Light';
+  /* margin-bottom: 2.4rem; */
+}
+
+.banner-title {
+  font-size: 50px;
+  font-family: 'NunitoSans-Bold';
+}
+
+.banner-des {
+  font-size: 32px;
+  width: 580px;
+  font-family: 'NunitoSans-Light';
+  letter-spacing: 3px;
+}
+.overlay{
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+}
+.learn-btn {
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'NunitoSans-Light';
+  font-size: 16px;
+  background:  url("/assets/images/btn.png")no-repeat center center transparent !important;
+  border-color: unset !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.learn-btn a{
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'NunitoSans-Light';
+}
+.btn-primary.active{
+  background-image:  url("/assets/images/btn.png")no-repeat center center transparent !important;
+}
+#sendMessageButton{
+  background:  url("/assets/images/btn.png")no-repeat center center transparent;  
+  border: none;
+}
+#FAQ .main-section {
+  /* border: 1px #c3c4c7 solid;
+  box-sizing: border-box; */
+}
+
+#FAQ .list-group-item.active {
+  background: #0083bb;
+  color: #fff;
+  border-radius: unset;
+}
+
+#FAQ .list-group-item {
+  background: rgb(248, 247, 247);
+  color: #000;
+  border: unset;
+  border-bottom: 3px #fff solid;
+  border-radius: unset;
+}
+
+#FAQ .list-content {
+  /* display:none; */
+  height: 450px;
+  padding: 15px;
+  text-align: left;
+}
+
+#FAQ .list-content.active {
+  display: block;
+}
+
+/* Style the tab */
+
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f7f3f3;
+  width: 40%;
+}
+
+/* Style the buttons inside the tab */
+
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: #676c75;
+  letter-spacing: 1px;
+  padding: 22px 35px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px #fff solid;
+  outline: none;
+  text-align: left;
+  font-family: 'NunitoSans-Light';
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+  background-color: #eeeded;
+}
+
+/* Create an active/current "tab button" class */
+
+.tab button.active {
+  background-color: #0083bb;
+  color: #fff;
+}
+
+/* Style the tab content */
+
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 60%;
+  padding: 30px 40px;
+  border-left: none;
+  font-size: 14px;
+  font-family: 'NunitoSans-Light';
+}
+
+.tabcontent ul li {
+  list-style: none;
+}
+
+.tabcontent ul li i {
+  font-size: 20px;
+  padding-right: 5px;
+  color: #7bc6ec;
+}
+
+re-captcha div {
+  transform: scale(0.92);
+  -webkit-transform: scale(0.92);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+
+#rc-imageselect, .g-recaptcha {
+  transform: scale(0.77);
+  -webkit-transform: scale(0.77);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+
+#contact-detail {
+  z-index: 999;
+  position: absolute;
+  bottom: 700px;
+  left: 0px;
+  right: 10px;
+}
+
+.get-in-touch h3 {
+  font-size: 40px;
+  letter-spacing: 2px;
+  font-family: 'NunitoSans-Bold';
+  padding-top: 8px;
+}
+
+.get-in-touch .row {
+  font-size: 20px;
+  color: #676c75;
+  letter-spacing: 1px;
+}
+
+.get-in-touch i {
+  color: #0083bb;
+  font-size: 15px;
+  padding-right: 5px;
+}
+.get-in-touch a{
+  color: #676c75;
+}
+.display-lg {
+  display: flex;
+}
+
+.display-sm {
+  display: none;
+}
+.img-sec{
+display: inline-block;
+}
+.img-sec img{
+  width: 100%;
+}
+.title-sec{
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'NunitoSans-Bold' !important;
+  padding:5px;
+}
+.title-sec .dir{
+  font-size:15px;
+  color:#0083bb;
+  cursor: pointer;
+  font-family: 'NunitoSans-Light';
+}
+.gm-style-iw + div {
+  display: none;
+}
+@media only screen and (min-width:320px) and (max-width:479px) {
+  #banner-section .img-fluid {
+    height: 200px;
+  }
+  #banner-section .carousel-caption {
+    bottom: 2%;
+  }
+  .banner-title {
+    font-size: 22px;
+  }
+  .banner-des {
+    font-size: 13px;
+    width: 290px;
+    letter-spacing: 2px;
+  }
+  .learn-btn {
+    letter-spacing: 1px;
+    font-size: 6px;
+  }
+  .what-we-do-content-wrapper {
+    height: 300px;
+  }
+  .section-heading-individual {
+    font-size: 18px;
+  }
+  .display-lg {
+    display: none;
+  }
+  .display-sm {
+    display: block;
+  }
+  .section-heading-desc {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding: 6px 20px;
+  }
+  #safety-tips {
+    background: unset;
+    background: linear-gradient(90deg, rgb(51, 120, 208), rgb(32, 197, 249));
+  }
+  #contact-form-section {
+    background: unset;
+    padding: 20px;
+    padding-top: 60px;
+    background: linear-gradient(90deg, rgb(117, 117, 238), rgb(88, 174, 239));
+  }
+  #contact-detail {
+    bottom: 760px;
+  }
+  .get-in-touch hr {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  .get-in-touch h3 {
+    font-size: 20px;
+  }
+  .get-in-touch .row {
+    font-size:14px;
+  }
+  .get-in-touch {
+    height: 330px;
+  }
+  .title-sec h5{
+    font-size: .85rem;
+  }
+  .title-sec .dir{
+    font-size:11px;
+  }
+  re-captcha div {
+    transform: scale(0.82);
+    -webkit-transform: scale(0.82);
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+  }
+  .tab button{
+    padding: 12px 22px;
+    font-size: 15px;
+  }
+  .tabcontent{
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+}
+
+@media only screen and (min-width:480px) and (max-width:767px) {
+  #banner-section .img-fluid {
+    height: 400px;
+  }
+  #banner-section .carousel-caption {
+    bottom: 28%;
+  }
+  .banner-title {
+    font-size: 35px;
+  }
+  .banner-des {
+    font-size: 18px;
+    width: 335px;
+    letter-spacing: 2px;
+  }
+  .learn-btn {
+    font-size: 12px;
+  }
+  .what-we-do-content-wrapper {
+    height: 300px;
+  }
+  .display-lg {
+    display: none;
+  }
+  .display-sm {
+    display: block;
+  }
+  #safety-tips {
+    background: unset;
+    background: linear-gradient(90deg, rgb(51, 120, 208), rgb(32, 197, 249));
+  }
+  #contact-form-section {
+    background: unset;
+    padding: 20px;
+    padding-top: 60px;
+    background: linear-gradient(90deg, rgb(117, 117, 238), rgb(88, 174, 239));
+  }
+
+  #contact-detail {
+    bottom: 755px;
+  }
+  .get-in-touch hr {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+  .get-in-touch h3 {
+    font-size: 20px;
+  }
+  .get-in-touch .row {
+    font-size:15px;
+  }
+}
+
+@media only screen and (min-width:768px) and (max-width:959px) {
+  #banner-section .img-fluid {
+    height: 500px;
+  }
+  #banner-section .carousel-caption {
+    bottom: 30%;
+  }
+  .banner-title {
+    font-size: 40px;
+  }
+  .banner-des {
+    font-size: 22px;
+    width: 400px;
+    letter-spacing: 2px;
+  }
+  .learn-btn {
+    font-size: 14px;
+  }
+  .what-we-do-content-wrapper {
+    height: 300px;
+  }
+  .display-lg {
+    display: none;
+  }
+  .display-sm {
+    display: block;
+  }
+  #safety-tips {
+    background: unset;
+    background: linear-gradient(90deg, rgb(51, 120, 208), rgb(32, 197, 249));
+  }
+  #contact-form-section {
+    background: unset;
+    padding: 20px;
+    padding-top: 60px;
+    background: linear-gradient(90deg, rgb(117, 117, 238), rgb(88, 174, 239));
+  }
+
+  #contact-detail {
+    bottom: 620px;
+  }
+  .get-in-touch hr {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+  .get-in-touch h3 {
+    font-size: 30px;
+  }
+  .get-in-touch .row {
+    font-size:15px;
+  }
+}

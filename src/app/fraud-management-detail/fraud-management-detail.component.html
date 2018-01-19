@@ -1,0 +1,48 @@
+<section id="detail-section" class="background-color main-content-area">
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+            {{successMsg}}
+        </div>
+        <div class="alert alert-danger" role="alert">
+            {{errMsg}}
+        </div>
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 text-center content-title-text">Fraud Management Detail
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 derect-location mb-3">
+                <div class="space-detail-wrapper offset-lg-3 justify-content-center">
+                    <div class="row information my-3">
+                        <label class="col-sm-5 col-lg-4 col-4">Requested ID:</label>
+                        <span class="col-sm-5 col-lg-4  col-4">{{detail.reportId}}</span>
+                    </div>
+                    <div class="row information my-3">
+                        <label class="col-sm-5 col-lg-4 col-4">{{title}}</label>
+                        <span class="col-sm-5 col-lg-4 col-4">{{id}}</span>
+                    </div>
+                    <div class="row information my-3">
+                        <label class="col-sm-5 col-lg-4 col-4">Reported By:</label>
+                        <span class="col-sm-5 col-lg-4 col-4"> {{detail.reportedBy}}</span>
+                    </div>
+                    <div class="row information my-3">
+                        <label class="col-sm-5 col-lg-4 col-4">Reported Against:</label>
+                        <span class="col-sm-5 col-lg-4 col-4">{{detail.againstUser}}</span>
+                    </div>
+                    <div class="row information my-3">
+                        <label class="col-sm-5 col-lg-4 col-4">Role:</label>
+                        <span class="col-sm-5 col-lg-4 col-4">{{detail.role}}</span>
+                    </div>
+                    <div class="row information my-3">
+                        <label class="col-sm-5 col-lg-4 col-4">Brief:</label>
+                        <span class="col-sm-5 col-lg-7 col-8">{{detail.brife}}</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button (click)="blockUser()" data-style="expand-right" [ladda]="isLoading" class="btn btn-primary button-style btn-find" type="button" *ngIf="!isBlock">Block User</button>
+                    <button (click)="unblockUser()" data-style="expand-right" [ladda]="isLoading" class="btn btn-primary button-style btn-find" type="button"  *ngIf="isBlock">Unblock User</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

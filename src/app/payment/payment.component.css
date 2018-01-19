@@ -1,0 +1,19 @@
+.choose-plan {
+    font-size: 20px;
+    color: #282b31;
+}
+
+.plan-style {
+    color: #87888a;
+    font-size: 17px
+}
+
+.choose-plan-inner-section {
+    background-color: #fff;
+}
+
+@media (min-width:320px) and (max-width:767px) {
+    .choose-plan-section.pl-5 {
+        padding-left: 2rem !important;
+    }
+}

@@ -1,0 +1,461 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/*=== Footer Sticky ===*/
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-color: #F8F9FB;
+    font-family: 'NunitoSans-Regular';
+    margin-bottom: 100px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'NunitoSans-SemiBold';
+}
+
+.border {
+    border: 1px solid #C2C5CA;
+}
+
+#header .nav-link {
+    font-family: 'NunitoSans-Regular';
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+#header .nav-item.active {
+    font-family: 'NunitoSans-ExtraBold';
+    color: #1765A3;
+}
+
+.background-color {
+    background-color: #F8F9FB;
+}
+
+#header nav {
+    background-color: #fff;
+}
+
+.nav-link {
+    font-family: "NunitoSans-Bold";
+}
+
+#header {
+    background-color: #fff;
+    border-bottom: 3px solid #0083BB;
+}
+
+.login-header .dropdown-menu {
+    min-width: 7rem !important;
+    position: absolute !important;
+}
+div#navbarNavDropdown > ul > li > .dropdown {
+    width: 100px;
+    max-width: 100px;
+}
+.login-header a:focus, a:hover{
+    text-decoration: none !important;
+}
+.login-header .btn-secondary:hover,
+.btn-secondary.active,
+.btn-secondary:active,
+.show>.btn-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #0083BB;
+    border-color: #0083BB;
+}
+.btn-secondary span.uname{
+    width: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.label-style {
+    color: #282b31;
+    font-size: 17px
+}
+
+.input-padding {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+.selectWrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: .25rem;
+    background: #FFFFFF url('/assets/images/img_arrow.png') right 13px center no-repeat;
+}
+
+.selectWrapper select {
+    line-height: 18px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background: transparent !important;
+    background-image: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+}
+
+.button-style {
+    background-color: #1765A3;
+    border: none;
+    padding: 12px 60px;
+    font-size: 17px;
+    cursor: pointer;
+    color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-family: 'NunitoSans-Bold';
+}
+
+.button-style:hover {
+    transition: all 0.5s;
+    /*opacity: 0.5;*/
+    background-color: #095795;
+}
+
+.content-title-text.color-white {
+    color: #fff;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    background-color: #1765A3;
+    border-color: #1765A3;
+}
+
+.btn-danger.button-style {
+    background-color: #C9302C;
+}
+
+.social-icon {
+    color: #C4C5CA;
+}
+
+.content-title-text {
+    color: #1765a3;
+    font-size: 38px;
+    font-family: 'NunitoSans-ExtraBold';
+}
+
+.custom-select.ng-invalid.ng-touched,
+.form-control.ng-invalid.ng-touched,
+.was-validated .custom-select:invalid,
+.was-validated .form-control:invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    /* display: none; */
+    margin-top: .25rem;
+    font-size: 17px;
+    color: #dc3545;
+}
+
+.valid-feedback {
+    margin-top: .25rem;
+    font-size: 17px;
+    color: #529c65;
+}
+
+.footer-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    /*line-height: 60px;*/
+    border-top: 1px solid #C2C5CA;
+    background-color: #fff;
+}
+
+.footer-text {
+    font-size: 14px;
+}
+
+.rounded-corner {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.signup-bg {
+    background: url("/assets/images/bg.png") repeat-y transparent top center;
+    background-size: 100% auto;
+}
+
+a.social-icon:focus,
+a.social-icon:hover {
+    color: #fff;
+    text-decoration: underline;
+    background-color: #014c8c;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.main-content-area {
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.max-input-width {
+    width: 100% !important;
+}
+
+.form-inline.city-state-align {
+    align-items: unset !important;
+}
+
+
+/*boostrapt table style*/
+
+.table td,
+.table th {
+    text-align: center;
+}
+
+.thead-inverse th {
+    background-color: #1765a3 !important;
+}
+
+.table tr {
+    background-color: #fff;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #ccc;
+    opacity: 0.7;
+}
+
+
+/* WebKit, Blink, Edge */
+
+.form-control:-moz-placeholder {
+    color: #ccc;
+    opacity: 0.7;
+}
+
+
+/* Mozilla Firefox 4 to 18 */
+
+.form-control::-moz-placeholder {
+    color: #ccc;
+    opacity: 0.7;
+}
+
+
+/* Mozilla Firefox 19+ */
+
+.form-control:-ms-input-placeholder {
+    color: #ccc;
+    opacity: 0.7;
+}
+
+
+/* Internet Explorer 10-11 */
+
+.form-control::-ms-input-placeholder {
+    color: #ccc;
+    opacity: 0.7;
+}
+
+.form-inline.city-state-align .form-control {
+    width: 100%;
+}
+
+
+/* Microsoft Edge */
+
+
+/*boostrapt table style*/
+
+
+/*side menu css start*/
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 90px !important;
+    box-shadow: 5px 0 5px -5px #ccc;
+}
+
+.sidenav a {
+    padding: 17px 8px 17px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #282b31;
+    display: block;
+    transition: 0.3s;
+    border-bottom: 1px solid #eee;
+}
+
+.sidenav a.closebtn {
+    padding-bottom: 8px;
+    border-bottom: 0px solid #eee;
+    padding-top: 0;
+    color: #848484;
+}
+
+.sidenav a:hover {
+    color: #282b31;
+    background-color: #F8F9FB;
+}
+
+.sidenav a.closebtn:hover {
+    background-color: #fff;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.slide-top-section {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: 15px;
+    padding-left: 28px;
+    /*border-bottom: 1px solid;*/
+    border-bottom: 3px solid #0083BB;
+    padding-bottom: 9px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+
+/*Loding mask css*/
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+button:focus {
+    outline: none;
+    outline: none;
+}
+:focus {
+    outline: none;
+}
+/*side menu css end*/
+
+@media (min-width:320px) and (max-width:767px) {
+    .footer-section {
+        padding-left: 2rem !important;
+    }
+    .text-left.footer-logo {
+        text-align: center !important;
+    }
+    .footer-section.py-4 {
+        padding-left: 0 !important;
+    }
+    .content-title-text {
+        font-size: 31px;
+    }
+    .h2,
+    h2 {
+        font-size: 1.5rem;
+    }
+    .no-padding-mobile {
+        padding: 0 !important;
+    }
+    .text-right.responsive-align {
+        text-align: left !important;
+    }
+}
+
+@media (min-width:320px) and (max-width:576px) {
+    .float-right.footer-center-responsive {
+        float: unset !important;
+        text-align: center;
+        display: inline-flex;
+    }
+    .footer-center-responsive.text-right {
+        text-align: center !important;
+    }
+    .footer-text {
+        /*margin-bottom: 13px;*/
+        font-size:11px;
+        text-align: center !important;
+        margin-top: 0 !important;
+    }
+    .enterprse-btn.text-right {
+        text-align: center !important;
+    }
+}
+
+@media (min-width:768px) and (max-width:959px) {
+    .text-right.responsive-align {
+        text-align: left !important;
+    }
+}
+
+@media (min-width:1025px) {
+    .table-responsive {
+        display: inline-table !important;
+    }
+}

@@ -1,0 +1,5 @@
+firstname,lastname,username,address,city,state,cb_radio_handle,organization,phoneNumber,email,truckType,truckLength,truckNumber
+Test Nitish,Test Nitish,nitish.test,test,Ahmedabad,Gujarat,test,test,8490952641,nitish@mailinator.com,BIG,50,2345
+Test Malay,Test Malay,malay.test,test,Ahmedabad,Gujarat,test,test,2345252524,malay@mailinator.com,BIG,50,3456
+Test Jalay,Test Jalay,jalay.test,test,Ahmedabad,Gujarat,test,test,2353454564,jalay@mailinator.com,BIG,50,4567
+Test Nidhi,Test Nidhi,nitish.test,test,Ahmedabad,Gujarat,test,test,3456346343,nidhi@mailinator.com,BIG,50,5678
